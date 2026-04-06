@@ -69,8 +69,58 @@ def create_invalid_activation_world() -> tuple[World, Player]:
     player = Player(x=0, y=0, z=0, yaw=0)
     return world, player
 
+def create_single_air_world() -> tuple[World, Player]:
+    world = World(default_block=STONE)
+
+    # Underground cover above player
+    world.set_block((0, 1, 0), STONE)
+    world.set_block((0, 2, 0), STONE)
+    world.set_block((0, 3, 0), STONE)
+
+    # Only 1 air block ahead -> should NOT count as meaningful cavity
+    world.set_block((0, 0, -2), AIR)
+
+    player = Player(x=0, y=0, z=0, yaw=0)
+    return world, player
+
+
+def create_two_air_world() -> tuple[World, Player]:
+    world = World(default_block=STONE)
+
+    # Underground cover above player
+    world.set_block((0, 1, 0), STONE)
+    world.set_block((0, 2, 0), STONE)
+    world.set_block((0, 3, 0), STONE)
+
+    # 2 connected air blocks -> still should NOT count
+    world.set_block((0, 0, -2), AIR)
+    world.set_block((0, 1, -2), AIR)
+
+    player = Player(x=0, y=0, z=0, yaw=0)
+    return world, player
+
+
+def create_three_air_world() -> tuple[World, Player]:
+    world = World(default_block=STONE)
+
+    # Underground cover above player
+    world.set_block((0, 1, 0), STONE)
+    world.set_block((0, 2, 0), STONE)
+    world.set_block((0, 3, 0), STONE)
+
+    # 3 connected air blocks -> should count as meaningful cavity
+    world.set_block((0, 0, -2), AIR)
+    world.set_block((0, 1, -2), AIR)
+    world.set_block((1, 0, -2), AIR)
+
+    player = Player(x=0, y=0, z=0, yaw=0)
+    return world, player
+
 def main() -> None:
     scenarios = [
+        ("Single air block scenario", create_single_air_world()),
+        ("Two air blocks scenario", create_two_air_world()),
+        ("Three air blocks scenario", create_three_air_world()),
         ("Hit scenario", create_hit_world()),
         ("Diagonal hit scenario", create_diagonal_hit_world()),
         ("Miss scenario", create_miss_world()),
