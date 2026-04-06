@@ -15,6 +15,7 @@ It is intended to test:
 - meaningful air cluster detection
 - underground activation rules
 - scan result flow (hit, miss, invalid activation)
+- cooldown-aware activation flow
 
 ## Non-Goals
 
@@ -46,4 +47,4 @@ This helps isolate core logic from integration complexity.
 
 ## Current Status
 
-Early setup / structure phase
+Early prototype phase with working directional scan, cavity detection, underground validation, and cooldown handling

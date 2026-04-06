@@ -147,3 +147,23 @@ Verify that Miner’s Echo cannot activate when the player is not underground.
 **Expected result**  
 - `success = False`
 - `reason = "invalid_activation"`
+
+## Scenario: Cooldown blocks repeated activation
+
+**Purpose**  
+Verify that Miner’s Echo cannot be activated again while the cooldown is still active.
+
+**World setup**  
+- player is underground
+- a valid cavity exists ahead
+- the first activation succeeds
+- cooldown is started immediately after that activation
+
+**Player setup**  
+- position: `(0, 0, 0)`
+- yaw: `0` (North)
+
+**Expected result**  
+- first activation -> `success = True`, `reason = "hit"`
+- second activation during cooldown -> `success = False`, `reason = "cooldown"`
+- later activation after cooldown expiry -> normal scan result again
