@@ -71,6 +71,28 @@ Future versions may include:
 - optional ore-related upgrades
 - server-specific tuning and balance
 
+## AI-Assisted Resonance Direction
+
+Miner’s Echo may later include an AI-assisted resonance analysis layer.
+
+This layer is not intended to replace the core scan mechanic. Instead, it should help interpret scan results and communicate them more clearly to the player.
+
+Possible future uses include:
+
+- cavity type hints
+- smarter resonance descriptions
+- contextual scan result interpretation
+- improved player-facing feedback
+
+Examples of future hint styles:
+
+- `Small cavity detected ahead.`
+- `Possible tunnel continuation.`
+- `Possible chamber detected ahead-right.`
+- `No meaningful resonance found.`
+
+The AI-assisted layer is planned as an extension on top of the deterministic core mechanic, not as part of the first playable prototype.
+
 ## Repository Structure
 
 - `docs/` — design and feature documentation

@@ -153,6 +153,7 @@ The MVP does not include:
 - advanced cave type analysis
 - multiplayer balancing
 - final visual polish
+- AI-assisted resonance interpretation
 
 ## MVP Success Criteria
 

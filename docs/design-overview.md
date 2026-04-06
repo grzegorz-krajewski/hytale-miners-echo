@@ -80,3 +80,18 @@ In later iterations, Miner’s Echo may evolve into a more advanced underground 
 - smarter classification of cavity types
 - AI-assisted resonance interpretation
 - item-based or equipment-based activation
+
+## AI-Assisted Direction
+
+In future iterations, Miner’s Echo may include an AI-assisted resonance interpretation layer.
+
+The purpose of this layer is not to automate exploration or reveal more information than the base mechanic allows.
+
+Instead, it should:
+
+- interpret scan outcomes
+- improve player-facing clarity
+- reinforce the identity of Miner’s Echo as a smart mining utility
+- support richer resonance feedback without turning the system into full x-ray gameplay
+
+This direction should remain optional and should only be explored after the core mechanic is stable and well understood.
