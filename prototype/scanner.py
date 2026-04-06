@@ -29,6 +29,8 @@ def apply_offset(
 def scan_for_cavity(
     world: World,
     player: Player,
+    *,
+    on_cooldown: bool = False,
 ) -> ScanResult:
     """
     Main prototype scan flow for Miner's Echo.
@@ -38,7 +40,17 @@ def scan_for_cavity(
     - direction determined from player yaw
     - scan uses predefined directional pattern
     - first meaningful air cluster ends the scan
+    - activation can be blocked by cooldown
     """
+    if on_cooldown:
+        return ScanResult(
+            success=False,
+            reason="cooldown",
+            direction=None,
+            cluster_positions=[],
+            checked_positions=[],
+        )
+
     if not is_underground(world, player.position):
         return ScanResult(
             success=False,
@@ -85,12 +97,10 @@ if __name__ == "__main__":
 
     world = World(default_block=STONE)
 
-    # Ceiling above player so underground check passes.
     world.set_block((0, 1, 0), STONE)
     world.set_block((0, 2, 0), STONE)
     world.set_block((0, 3, 0), STONE)
 
-    # Small cave cluster ahead to the north.
     world.set_block((0, 0, -2), AIR)
     world.set_block((0, 1, -2), AIR)
     world.set_block((1, 0, -2), AIR)
