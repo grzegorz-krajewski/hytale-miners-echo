@@ -1,0 +1,20 @@
+{
+  "Group": "minersecho",
+  "Name": "MinerEchoAssets",
+  "Version": "0.1.0",
+  "Description": "MinerEcho custom assets",
+  "Authors": [
+    {
+      "Name": "Eliose",
+      "Email": "",
+      "Url": ""
+    }
+  ],
+  "Website": "",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true,
+  "SubPlugins": []
+}

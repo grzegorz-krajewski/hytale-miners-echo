@@ -12,7 +12,8 @@ import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-
+import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.minersecho.plugin.effect.MinerEchoEffect; 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -120,6 +121,9 @@ public class MinerEchoCommand extends AbstractPlayerCommand {
                 throwable.printStackTrace();
                 return null;
             });
+            
+            Player player = entityStore.getComponent(playerEntityRef, Player.getComponentType());
+            MinerEchoEffect.activateSonar(playerEntityRef, entityStore, world, player);
 
         } catch (Exception e) {
             ctx.sendMessage(Message.raw("[MinerEcho] Exception: " + e.getMessage()));

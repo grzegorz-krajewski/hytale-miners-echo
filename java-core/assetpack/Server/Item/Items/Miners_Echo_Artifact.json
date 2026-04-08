@@ -1,0 +1,32 @@
+{
+  "TranslationProperties": {
+    "Name": "Miner's Echo",
+    "Description": "A resonant relic that tears open a tiny void ahead."
+  },
+  "Icon": "Icons/ItemsGenerated/miners_echo_artifact.png",
+  "Categories": [
+    "Items.Example"
+  ],
+  "Model": "Items/miners_echo_artifact/model.blockymodel",
+  "Texture": "Items/miners_echo_artifact/model_texture.png",
+  "PlayerAnimationsId": "Item",
+  "IconProperties": {
+    "Scale": 1.21,
+    "Rotation": [67, 330, 0],
+    "Translation": [1.3, -1]
+  },
+  "ItemEntity": {
+    "ParticleSystemId": null
+  },
+  "DropOnDeath": true,
+  "MaxStack": 1,
+  "Interactions": {
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "minersecho_artifact_use"
+        }
+      ]
+    }
+  }
+}

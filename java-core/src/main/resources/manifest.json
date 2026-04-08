@@ -1,11 +1,12 @@
 {
   "Group": "minersecho",
   "Name": "MinerEcho",
-  "Version": "0.1.0",
+  "Version": "0.2.0",
   "Main": "com.minersecho.plugin.MinerEchoPlugin",
-  "Description": "Miner's Echo prototype plugin",
+  "Description": "Miner's Echo prototype plugin with custom artifact interaction",
   "Authors": [],
   "Website": "",
+  "IncludesAssetPack": true,
   "ServerVersion": "2026.03.26-89796e57b",
   "Dependencies": {},
   "OptionalDependencies": {}
