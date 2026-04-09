@@ -1,6 +1,10 @@
-# Miner Echo
+# Miner's Echo
+
+A lightweight fan-made Hytale mod focused on underground mineral echo visualization.
 
 ![Miner's Echo banner](assets/miners-echo-banner.png)
+
+## About
 
 **Miner Echo** is a custom Hytale gameplay project built around an artifact-based scanning mechanic that reveals underground rock and mineral structures.
 
