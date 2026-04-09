@@ -1,27 +1,27 @@
-# Hytale: Miner’s Echo Java Core
+# Hytale: Miner Echo Java Core
 
-This is a Java core starter for Miner’s Echo.
+This directory contains the active Java implementation of Miner Echo, including the plugin source, asset pack, build script and packaged output.
 
-It contains the gameplay logic ported from the Python prototype:
-- yaw to 8-direction mapping
-- 5x3x2 directional scan patterns
-- meaningful air cluster detection
-- underground validation
-- cooldown tracking
-- simple demo runner
+## Contents
 
-This is **not yet a Hytale plugin**. It is a portable Java core intended to be wired into a future Hytale server plugin/runtime integration.
+- `src/main/` — main Java source code
+- `assetpack/` — custom game assets used by the plugin
+- `build.sh` — local build and deployment script
+- `out/` — compiled classes / output
+- `MinerEchoPlugin.jar` — packaged plugin artifact
 
-## Run
+## Build
 
-Compile:
+From this directory run:
 
 ```bash
-javac -d out $(find src/main/java -name "*.java")
+./build.sh
 ```
 
-Run:
+The script compiles the project, creates the plugin JAR and copies the build output into the configured local Hytale server `mods` directory.
 
-```bash
-java -cp out com.minersecho.Main
-```
+## Notes
+
+This setup is currently configured for the local development environment used in the project.
+
+If you want to run it elsewhere, adjust the paths inside `build.sh`.
