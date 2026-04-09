@@ -1,5 +1,7 @@
 # Miner Echo
 
+![Miner's Echo banner](assets/miners-echo-banner.png)
+
 **Miner Echo** is a custom Hytale gameplay project built around an artifact-based scanning mechanic that reveals underground rock and mineral structures.
 
 The goal of the first version was clear: create a working in-game artifact that allows the player to preview selected underground block areas and support mineral discovery in a more experimental, gameplay-driven way.
@@ -17,7 +19,7 @@ Future versions may expand the idea further, but this release already fulfills t
 
 Miner Echo was designed as a custom artifact that works like a primitive sonar or geological scanner.
 
-When activated, it processes a selected area in front of the player and temporarily reveals the block structure, making it easier to inspect underground rock formations and mineral-related areas.
+When activated, it processes a selected area and temporarily reveals the underground block structure, making it easier to inspect rock formations and mineral-related zones.
 
 This creates a more interactive and system-driven alternative to traditional resource checking.
 
@@ -59,16 +61,73 @@ Miner Echo combines several layers of implementation:
 - custom asset pack setup
 - custom item model pipeline
 
+## Repository Layout
+
+- `docs/` — project notes and documentation
+- `java-core/` — active Hytale plugin code, asset pack, build script and packaged JAR
+- `prototype/` — earlier prototype work
+- `tests/` — test-related files
+
+## How to Run
+
+This repository contains the full project source, while the playable plugin build is handled from the `java-core` directory.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/grzegorz-krajewski/hytale-miners-echo.git
+cd hytale-miners-echo/java-core
+```
+
+### 2. Run the build script
+
+```bash
+./build.sh
+```
+
+The script compiles the Java sources, creates the plugin JAR, and copies both the JAR and asset pack into the local Hytale server `mods` directory used in the current setup.
+
+## Current Local Setup
+
+The current local development setup is wired to a Hytale server environment located at:
+
+```bash
+/Users/grzegorz/Projects/hytale-server/
+```
+
+The build output is copied into:
+
+```bash
+/Users/grzegorz/Projects/hytale-server/mods/
+```
+
+## Contents of `java-core`
+
+The `java-core` directory currently includes:
+
+- `src/main/` — main Java source code
+- `assetpack/` — custom Hytale assets used by the plugin
+- `build.sh` — build and deployment script
+- `MinerEchoPlugin.jar` — packaged plugin artifact
+- `out/` — compiled output directory
+
+## Notes
+
+- The current setup is tailored to the local development environment used for this project.
+- If you want to run it on another machine, update the paths inside `java-core/build.sh`.
+- After building, start or restart the local Hytale server to load the updated plugin version.
+
 ## Project Structure
 
 - `MinerEchoPlugin` — plugin bootstrap and registration
 - `MinerEchoArtifactInteraction` — artifact use handling
-- `MinerEchoEffect` — scan/reveal logic
+- `MinerEchoEffect` — scan / reveal logic
 - asset pack files — item definition, model, icon and interaction configuration
 
 ## Design Focus
 
-The first version focused on one thing:  
+The first version focused on one thing:
+
 **make the reveal mechanic work in-game in a form that is usable, understandable, and expandable.**
 
 Instead of overbuilding the system too early, the project prioritised:
@@ -81,7 +140,8 @@ Instead of overbuilding the system too early, the project prioritised:
 
 ## Future Versions
 
-Version 1 is complete.  
+Version 1 is complete.
+
 Future updates may extend the system with ideas such as:
 
 - more advanced ore-only detection
