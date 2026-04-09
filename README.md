@@ -1,108 +1,113 @@
-# Hytale: Miner’s Echo
+# Miner Echo
 
-Miner’s Echo is a directional underground sensing mechanic for Hytale, designed to help players detect nearby hidden caves without turning mining into full x-ray gameplay.
+**Miner Echo** is a custom Hytale gameplay project built around an artifact-based scanning mechanic that reveals underground rock and mineral structures.
 
-## Status
+The goal of the first version was clear: create a working in-game artifact that allows the player to preview selected underground block areas and support mineral discovery in a more experimental, gameplay-driven way.
 
-Concept / pre-production
+## Version
 
-## Overview
+**Current release:** `v1.0.0`
 
-Miner’s Echo is a short-range mining utility that sends a directional pulse in front of the player and briefly reveals meaningful underground cavities such as tunnels, openings, and small cave chambers.
+Version 1 is considered **complete for its original scope**.  
+It successfully delivers the intended core mechanic: **previewing rocks and mineral areas through a custom artifact interaction**.
 
-The goal is to make mining more rewarding and readable while preserving exploration and discovery.
+Future versions may expand the idea further, but this release already fulfills the main gameplay and technical objectives defined for the first milestone.
 
 ## Core Idea
 
-Instead of permanent wall vision, Miner’s Echo gives the player a short, controlled scan:
+Miner Echo was designed as a custom artifact that works like a primitive sonar or geological scanner.
 
-- directional scan only
-- limited range
-- short visual feedback
-- cooldown-based usage
-- underground only
+When activated, it processes a selected area in front of the player and temporarily reveals the block structure, making it easier to inspect underground rock formations and mineral-related areas.
 
-This makes it feel more like a mining tool than a cheat.
+This creates a more interactive and system-driven alternative to traditional resource checking.
 
-## MVP Goals
+## Features in v1.0.0
 
-The first playable version should:
+- custom artifact item integrated into the Hytale asset pack
+- custom model and icon support
+- right-click artifact interaction
+- target block detection
+- 3×3×3 area scanning
+- temporary underground structure reveal
+- support for previewing rock and mineral zones
+- delayed restoration of modified blocks
+- activation sound feedback
+- cooldown protection against spam
+- modular Java plugin structure for further expansion
 
-- scan in front of the player only
-- use 8 horizontal directions
-- ignore vertical look pitch
-- detect meaningful underground air clusters
-- reveal the first valid cavity ahead of the player
-- apply a cooldown after use
+## What v1.0.0 Achieves
 
-## Current MVP Spec
+This version completes the original design target:
 
-- scan size: 5x3x2
-- scan type: directional
-- directions: 8-way horizontal
-- input basis: yaw only
-- pitch: ignored
-- activation: underground only
-- result: first meaningful air cluster
-- minimum cavity threshold: 3 connected air blocks
-- cooldown: 10 seconds
-- feedback: pulse + brief highlight on hit, weaker pulse on miss
+- the artifact exists as a usable in-game item
+- the interaction works correctly
+- the scan reveals underground structure in a readable way
+- the player can inspect rock and mineral-related areas
+- the mechanic is functional enough to serve as a finished first release
 
-## Design Philosophy
+That makes `v1.0.0` a valid standalone milestone, not just an unfinished prototype.
 
-Miner’s Echo should feel like:
+## Technical Highlights
 
-- a smart mining utility
-- a server feature players remember
-- an exploration aid, not an x-ray replacement
+Miner Echo combines several layers of implementation:
 
-The ideal player reaction is:
+- Java gameplay scripting / plugin logic
+- Hytale interaction system integration
+- chunk and block manipulation
+- delayed block restoration
+- cooldown and activation flow control
+- custom asset pack setup
+- custom item model pipeline
 
-> "This server has Miner’s Echo. Mining actually feels better here."
+## Project Structure
 
-## Planned Extensions
+- `MinerEchoPlugin` — plugin bootstrap and registration
+- `MinerEchoArtifactInteraction` — artifact use handling
+- `MinerEchoEffect` — scan/reveal logic
+- asset pack files — item definition, model, icon and interaction configuration
 
-Future versions may include:
+## Design Focus
 
-- improved visual and audio feedback
-- item-based progression
-- AI-assisted resonance analysis
-- smarter cavity classification
-- optional ore-related upgrades
-- server-specific tuning and balance
+The first version focused on one thing:  
+**make the reveal mechanic work in-game in a form that is usable, understandable, and expandable.**
 
-## AI-Assisted Resonance Direction
+Instead of overbuilding the system too early, the project prioritised:
 
-Miner’s Echo may later include an AI-assisted resonance analysis layer.
+- working gameplay interaction
+- visible environmental feedback
+- reliable block restoration
+- clean separation between code and asset logic
+- solid base for future versions
 
-This layer is not intended to replace the core scan mechanic. Instead, it should help interpret scan results and communicate them more clearly to the player.
+## Future Versions
 
-Possible future uses include:
+Version 1 is complete.  
+Future updates may extend the system with ideas such as:
 
-- cavity type hints
-- smarter resonance descriptions
-- contextual scan result interpretation
-- improved player-facing feedback
+- more advanced ore-only detection
+- better visual highlighting
+- refined reveal presentation
+- improved collision handling
+- more artifact variants
+- larger or different scan patterns
+- richer sound and FX feedback
 
-Examples of future hint styles:
+These are extensions of an already working system, not requirements for v1.
 
-- `Small cavity detected ahead.`
-- `Possible tunnel continuation.`
-- `Possible chamber detected ahead-right.`
-- `No meaningful resonance found.`
+## Tech Stack
 
-The AI-assisted layer is planned as an extension on top of the deterministic core mechanic, not as part of the first playable prototype.
+- **Java**
+- **Hytale server mod/plugin architecture**
+- **Custom asset pack**
+- **Blockymodel-based custom content**
 
-## Repository Structure
+## Status
 
-- `docs/` — design and feature documentation
-- `prototype/` — gameplay logic prototypes
-- `tests/` — test scenarios and validation cases
+**Released as v1.0.0**  
+**Scope completed:** underground rock and mineral preview mechanic
 
-## Next Steps
+## Author
 
-- finalize design overview
-- lock MVP rules
-- document scan direction patterns
-- prototype scan logic outside the game
-- build test scenarios before game integration
+**Grzegorz Krajewski**
+
+Backend and systems-focused developer exploring gameplay mechanics, modding workflows, and interactive technical design.
